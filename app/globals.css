@@ -12,4 +12,15 @@ p { color: #667085; line-height: 1.9; }
 .yellow { background: #fbbc05; } .green { background: #34a853; } 
 .button { display: inline-block; margin-top: 16px; padding: 13px 22px; border-radius: 12px; border: 1px solid #d8dee8; background: #fff; 
  color: #172033; font-weight: bold; font-size: 15px; cursor: pointer; text-decoration: none; }
-        
+.button:hover { background: #f1f5ff; } 
+.primary { background: #4285f4; color: white; border-color: #4285f4; }
+.primary:hover { background: #2b6fe0; } 
+.small { font-size: 13px; } 
+.list { text-align: right; margin-top: 22px; } 
+.request { border: 1px solid #e8edf5; border-radius: 14px; padding: 18px; margin-bottom: 12px; overflow-wrap: anywhere; } 
+.actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.actions form { display: inline-block; } 
+.actions button { border: 0; border-radius: 9px; padding: 10px 13px; color: white; cursor: pointer; }
+.accept { background: #34a853; } .reject { background: #ea4335; } .exclude { background: #5f6579; } 
+.status { font-weight: bold; color: #3d4c66; }
+@media (max-width: 520px) { .card { padding: 25px 18px; } h1 { font-size: 24px; } }
