@@ -30,6 +30,31 @@ return ( <main>
   <p className="status">الحالة: {labels[item.status] || item.status}</p>
   <div className="actions"> 
    {[ ["APPROVED", "قبول", "accept"],
+["REJECTED", "رفض", "reject"], ["EXCLUDED", "استبعاد", "exclude"], ].map(([value, title, cls]) => ( <form action={decideMembership} key={value}> <input type="hidden" name="email" value={item.email} /> <input type="hidden" name="decision" value={value} /> <button type="submit" className={cls}>{title}</button> </form> ))} </div> </div> ))} </div> <form action={async () => { "use server"; await signOut({ redirectTo: "/" }); }}> <button className="button" type="submit">تسجيل الخروج</button> </form> </section> </main> ); }
+ ["REJECTED", "رفض", "reject"],
+ ["EXCLUDED", "استبعاد", "exclude"],
+ ].map(([value, title, cls]) => (
+ <form action={decideMembership} key={value}> 
+<input type="hidden" name="email" value={item.email} />
+  <input type="hidden" name="decision" value={value} /> 
+  <button type="submit" className={cls}>{title}</button>
+ </form> 
+ ))} 
+</div>
+</div> 
+ ))} 
+</div>
+ <form action={async () => { 
+ "use server";
+ await signOut({ redirectTo: "/" }); 
+}}> 
+  <button className="button" type="submit">تسجيل الخروج</button>
+ </form>
+</section> 
+ </main>
+ );
+}
+     
      ["REJECTED", "رفض", "reject"], ["EXCLUDED", "استبعاد", "exclude"], ].map(([value, title, cls]) => ( <form action={decideMembership} key={value}> <input type="hidden" name="email" value={item.email} /> <input type="hidden" name="decision" value={value} /> <button type="submit" className={cls}>{title}</button> </form> ))} </div> </div> ))} </div> <form action={async () => { "use server"; await signOut({ redirectTo: "/" }); }}> <button className="button" type="submit">تسجيل الخروج</button> </form> </section> </main> ); }
  ["REJECTED", "رفض", "reject"],
  ["EXCLUDED", "استبعاد", "exclude"],
