@@ -20,7 +20,8 @@ const labels = {
     PENDING: "قيد المراجعة",
     APPROVED: "مقبول", 
     REJECTED: "مرفوض", 
-    EXCLUDED: "مستبعد", };
+    EXCLUDED: "مستبعد", 
+};
 return (
     <main
         className="container"> <section className="card"> 
