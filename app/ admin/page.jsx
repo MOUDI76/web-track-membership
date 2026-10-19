@@ -18,9 +18,9 @@ ORDER BY created_at DESC
     
 const labels = { 
     PENDING: "قيد المراجعة",
-    APPROVED: "مقبول", 
-    REJECTED: "مرفوض", 
-    EXCLUDED: "مستبعد", 
+    APPROVED: "مقبول",
+    REJECTED: "مرفوض",
+    EXCLUDED: "مستبعد",
 };
 return (
     <main>
