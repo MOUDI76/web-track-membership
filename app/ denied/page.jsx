@@ -6,7 +6,7 @@ export default function Denied() {
       <section className="card">
         <h1>تعذر إكمال تسجيل الدخول</h1>
        <p>.وحاول مرة أخرى Google تأكد من إعدادات</p>
-        <Link className="button primary" href="/"> العودة إلى الصفحة الرئيسية</Link>
+        <Link className="button primary" href="/">العودة إلى الصفحة الرئيسية</Link>
       </section>
     </main>
   );
