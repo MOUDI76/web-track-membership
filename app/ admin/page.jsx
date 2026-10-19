@@ -13,7 +13,7 @@ return ( <main> <section className="card"> <div className="tag">OWNER DASHBOARD<
   </section>
 </main>
 ); }
-[10/19/2026 9:45 PM] محفوظاتي: import { auth, signOut } from "@/auth"; 
+ import { auth, signOut } from "@/auth"; 
 import { database } from "@/lib/db";
 import { redirect } from "next/navigation";
 import { decideMembership } from "./actions";
