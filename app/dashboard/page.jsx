@@ -9,13 +9,13 @@ const email = session.user.email.trim().toLowerCase();
   if (owner && email === owner) redirect("/admin");
 const sql = database(); 
   await sql`
-  (INSERT INTO membership_requests (email, full_name, status)
-  VALUES (${email}, ${session.user.name || 'عضو'}, 'PENDING')
+  INSERT INTO membership_requests (email, full_name, status)
+  VALUES (${email}, ${session.user.name ||"عضو"}, 'PENDING')
   ON CONFLICT (email) DO UPDATE 
-  SET full_name = EXCLUDED.full_name) 
+  SET full_name = EXCLUDED.full_name
   `;
-const rows = await sql `
-(SELECT status FROM membership_requests WHERE email = '${email}' LIMIT 1
+const rows = await sql`
+SELECT status FROM membership_requests WHERE email = ${email} LIMIT 1
 `;
   const status = rows[0]?.status;
 const messages = {
@@ -28,8 +28,9 @@ return (
     <section className="card">
       <div className="tag">MEMBERSHIP STATUS</div>
       <h1>{status === "APPROVED" ? "مبروك!" : "حالة طلب العضوية"}</h1>
-      <p>أهلاً {session.user.name  "بك"}</p>
-      <p className="status">{messages[status]  "تعذر قراءة الحالة"}</p> <p className="small">{email}</p> 
+      <p>أهلاً {session.user.name || "بك"}</p>
+      <p className="status">{messages[status] ||  "تعذر قراءة الحالة"}</p>
+      <p className="small">{email}</p> 
       <p className="small">إذا اتخذ المالك قراراً جديداً، حدّث الصفحة لرؤية النتيجة.</p> 
       <form action={async () => {
     "use server"; 
