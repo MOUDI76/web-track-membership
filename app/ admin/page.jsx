@@ -34,7 +34,7 @@ return (
  <div className="request" key={item.email}> 
   <strong>{item.full_name}</strong>
   <p className="small">{item.email}</p>
-  <p className="status">الحالة: {labels[item.status]  item.status}</p>
+  <p className="status">الحالة: {labels[item.status] || item.status}</p>
   <div className="actions"> 
    {[
 ["APPROVED", "قبول", "accept"],
