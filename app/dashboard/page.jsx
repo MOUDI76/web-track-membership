@@ -10,14 +10,14 @@ const owner = (process.env.OWNER_EMAIL || "").trim().toLowerCase();
 if (owner && email === owner) redirect("/admin");
 
   const sql = database();
-  await sql
+  await sql `
   INSERT INTO membership_requests (email, full_name, status)
   VALUES (${email}, ${session.user.name || "عضو"}, 'PENDING') 
   ON CONFLICT (email) DO UPDATE 
-  SET full_name = EXCLUDED.full_name;
+  SET full_name = EXCLUDED.full_name `;
 
-const rows = await sql
-SELECT status FROM membership_requests WHERE email = ${email} LIMIT 1
+const rows = await sql `
+SELECT status FROM membership_requests WHERE email = ${email} LIMIT 1 `
   ;
 const status = rows[0]?.status;
 
