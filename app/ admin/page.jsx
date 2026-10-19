@@ -8,7 +8,7 @@ export default async function AdminPage() {
     const email = session?.user?.email?.trim().toLowerCase();
     const owner = process.env.OWNER_EMAIL?.trim().toLowerCase();
 if (!email) redirect("/"); 
-if (!owner  email !== owner) redirect("/dashboard");
+if (!owner || email !== owner) redirect("/dashboard");
 const sql = database(); 
 const requests = await sql`
 SELECT email, full_name, status, created_at, updated_at
@@ -23,8 +23,8 @@ const labels = {
     EXCLUDED: "مستبعد", 
 };
 return (
-    <main
-        className="container"> <section className="card"> 
+    <main>
+      <section className="card"> 
         <div className="tag">OWNER DASHBOARD</div>
         <h1>لوحة إدارة العضويات</h1> 
      <p>أهلاً بمالك الموقع. هنا تراجع الطلبات وتتخذ القرار.</p> 
@@ -58,3 +58,4 @@ return (
         </section>
     </main>
 );
+}
