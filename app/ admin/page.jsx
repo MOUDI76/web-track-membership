@@ -35,4 +35,22 @@ return ( <main>
  ["EXCLUDED", "استبعاد", "exclude"],
  ].map(([value, title, cls]) => (
  <form action={decideMembership} key={value}> 
-<input type="hidden" name="email" value={item.email} /> <input type="hidden" name="decision" value={value} /> <button type="submit" className={cls}>{title}</button> </form> ))} </div> </div> ))} </div> <form action={async () => { "use server"; await signOut({ redirectTo: "/" }); }}> <button className="button" type="submit">تسجيل الخروج</button> </form> </section> </main> ); }
+<input type="hidden" name="email" value={item.email} />
+  <input type="hidden" name="decision" value={value} /> 
+  <button type="submit" className={cls}>{title}</button>
+ </form> 
+ ))} 
+</div>
+</div> 
+ ))} 
+</div>
+ <form action={async () => { 
+ "use server";
+ await signOut({ redirectTo: "/" }); 
+}}> 
+  <button className="button" type="submit">تسجيل الخروج</button>
+ </form>
+</section> 
+ </main>
+ );
+}
