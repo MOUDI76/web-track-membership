@@ -2,7 +2,7 @@ import "./globals.css";
 
 export const metadata = {
   title: "بوابة أعضاء مسار الويب",
-  description: "تجربة Google Login وإدارة طلبات العضوية",
+  description: " وإدارة طلبات العضوية Google Login تجربة",
 };
 
 export default function RootLayout({ children }) {
